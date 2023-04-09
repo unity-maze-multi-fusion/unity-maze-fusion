@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
+  wall: {fileID: 5113297095578343384, guid: 51be7d903a29ddc4cb6448195cb03411, type: 3}
+  key: {fileID: 1906060572172826017, guid: 79dd5a18bea0f9142885e86f48b4d1cc, type: 3}
   _Players:
     _items: []
 --- !u!114 &5669278683590357446

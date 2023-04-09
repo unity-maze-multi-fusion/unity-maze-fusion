@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - ControllerPrototype
     - DetectCollisions
     - FollowPlayer
+    - FusionScripts.Key
     - FusionScripts.NetworkConnectionManager
     - FusionScripts.NetworkGame
     - FusionScripts.NetworkGameManager
@@ -13,6 +14,7 @@ ScriptsOnlyBuild:
     - FusionScripts.NetworkPlayerInput
     - FusionScripts.NetworkSceneContext
     - FusionScripts.NetworkSmoothTransform
+    - FusionScripts.Wall
     - GameManager
     - Leaderboard
     - NetworkCharacterControllerPrototype
@@ -56,11 +58,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateMachineInspector
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -143,93 +142,97 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1622}
     - Class: 114
-      Script: {instanceID: 1732}
+      Script: {instanceID: 1666}
     - Class: 114
-      Script: {instanceID: 1756}
+      Script: {instanceID: 1734}
     - Class: 114
-      Script: {instanceID: 1892}
+      Script: {instanceID: 1758}
     - Class: 114
-      Script: {instanceID: 2130}
+      Script: {instanceID: 1894}
     - Class: 114
-      Script: {instanceID: 2182}
+      Script: {instanceID: 2132}
     - Class: 114
-      Script: {instanceID: 2228}
+      Script: {instanceID: 2184}
     - Class: 114
-      Script: {instanceID: 2240}
+      Script: {instanceID: 2230}
     - Class: 114
-      Script: {instanceID: 2328}
+      Script: {instanceID: 2242}
     - Class: 114
-      Script: {instanceID: 2570}
+      Script: {instanceID: 2330}
     - Class: 114
-      Script: {instanceID: 2616}
+      Script: {instanceID: 2572}
     - Class: 114
-      Script: {instanceID: 2704}
+      Script: {instanceID: 2618}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2706}
     - Class: 114
-      Script: {instanceID: 2806}
+      Script: {instanceID: 2788}
     - Class: 114
       Script: {instanceID: 2808}
     - Class: 114
       Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 2820}
+      Script: {instanceID: 2812}
     - Class: 114
-      Script: {instanceID: 2838}
+      Script: {instanceID: 2822}
     - Class: 114
-      Script: {instanceID: 2846}
+      Script: {instanceID: 2840}
     - Class: 114
-      Script: {instanceID: 2894}
+      Script: {instanceID: 2848}
     - Class: 114
-      Script: {instanceID: 2918}
+      Script: {instanceID: 2896}
     - Class: 114
-      Script: {instanceID: 3058}
+      Script: {instanceID: 2920}
     - Class: 114
-      Script: {instanceID: 3164}
+      Script: {instanceID: 3060}
     - Class: 114
-      Script: {instanceID: 3168}
+      Script: {instanceID: 3166}
     - Class: 114
-      Script: {instanceID: 3208}
+      Script: {instanceID: 3170}
     - Class: 114
-      Script: {instanceID: 3246}
+      Script: {instanceID: 3210}
     - Class: 114
-      Script: {instanceID: 3280}
+      Script: {instanceID: 3248}
     - Class: 114
-      Script: {instanceID: 3374}
+      Script: {instanceID: 3282}
     - Class: 114
-      Script: {instanceID: 3390}
+      Script: {instanceID: 3376}
     - Class: 114
-      Script: {instanceID: 3756}
+      Script: {instanceID: 3392}
     - Class: 114
-      Script: {instanceID: 3880}
+      Script: {instanceID: 3758}
     - Class: 114
-      Script: {instanceID: 4044}
+      Script: {instanceID: 3882}
     - Class: 114
-      Script: {instanceID: 4130}
+      Script: {instanceID: 4046}
     - Class: 114
-      Script: {instanceID: 4136}
+      Script: {instanceID: 4132}
     - Class: 114
-      Script: {instanceID: 4226}
+      Script: {instanceID: 4138}
     - Class: 114
-      Script: {instanceID: 4396}
+      Script: {instanceID: 4228}
     - Class: 114
-      Script: {instanceID: 4642}
+      Script: {instanceID: 4272}
     - Class: 114
-      Script: {instanceID: 4662}
+      Script: {instanceID: 4400}
     - Class: 114
-      Script: {instanceID: 4982}
+      Script: {instanceID: 4646}
     - Class: 114
-      Script: {instanceID: 5148}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5168}
+      Script: {instanceID: 4986}
     - Class: 114
-      Script: {instanceID: 5210}
+      Script: {instanceID: 5152}
     - Class: 114
-      Script: {instanceID: 5264}
+      Script: {instanceID: 5172}
     - Class: 114
-      Script: {instanceID: 5288}
+      Script: {instanceID: 5214}
     - Class: 114
-      Script: {instanceID: 5422}
+      Script: {instanceID: 5268}
+    - Class: 114
+      Script: {instanceID: 5292}
+    - Class: 114
+      Script: {instanceID: 5426}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -325,6 +328,12 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+      Hash: caba9b9ddcaebe25e9c7312a7ca38172
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: FusionScripts
+    className: Wall
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -349,7 +358,7 @@ ScriptsOnlyBuild:
     className: LayoutElement
   - hash:
       serializedVersion: 2
-      Hash: 3dd6168cc5bec5d53a20b7452e9499dd
+      Hash: d26eacc69e1634e7d8016f531d3385fa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1231,6 +1240,12 @@ ScriptsOnlyBuild:
     className: CinemachineTrackedDolly
   - hash:
       serializedVersion: 2
+      Hash: caba9b9ddcaebe25e9c7312a7ca38172
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: FusionScripts
+    className: Key
+  - hash:
+      serializedVersion: 2
       Hash: cd0ecdca0166232906c6f2df9dddc3d3
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.Editor
@@ -1537,7 +1552,7 @@ ScriptsOnlyBuild:
     className: CinemachineFollowZoom
   - hash:
       serializedVersion: 2
-      Hash: 317dc4ab224c1df78eb0b9f1a43b4b73
+      Hash: 1a15bc113c0c509f8fc5a854021349fd
     assemblyName: Assembly-CSharp.dll
     namespaceName: FusionScripts
     className: NetworkGame
