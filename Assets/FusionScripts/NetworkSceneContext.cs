@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ namespace FusionScripts
         // [SerializeField] internal Text fpsText;
         [SerializeField] internal Text hostClientText;
         [SerializeField] internal Text countText;
+        [SerializeField] internal TextMeshProUGUI keyCountText;
 
         internal static NetworkSceneContext Instance => NetworkSceneContext.instance;
 

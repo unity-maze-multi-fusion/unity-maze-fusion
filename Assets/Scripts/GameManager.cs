@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour
 
     public static bool isGameActive;
     public static bool isGameover;
-    public static int keyCount;
+    public static int doorCount;
+    // public static int keyCount;
     public string nameNew;
     public int time;
 
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = false;
         isGameover = false;
+        doorCount = 3;
         time = -1;
         inputField.characterLimit = 3;
     }
@@ -48,7 +50,7 @@ public class GameManager : MonoBehaviour
         launchUI.gameObject.SetActive(false);
         gameUI.gameObject.SetActive(true);
         // GenerateMaze();
-        keyCount = 0;
+        // keyCount = 0;
         InvokeRepeating("Timer", 0f, 1f);
     }
 
@@ -124,7 +126,7 @@ public class GameManager : MonoBehaviour
             gameoverUI.gameObject.SetActive(true);
             nameNew = inputField.text;
         }
-        keyText.text = "Keys\n" + keyCount;
+        // keyText.text = "Keys\n" + keyCount;
     }
 
     public void Timer()

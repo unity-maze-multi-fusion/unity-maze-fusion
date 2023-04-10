@@ -27,6 +27,10 @@ namespace StarterAssets
 			{
 				MoveInput(value.Get<Vector2>());
 			}
+			else
+			{
+				MoveInput(new Vector2(0, 0));
+			}
 		}
 
 		public void OnLook(InputValue value)
@@ -39,6 +43,11 @@ namespace StarterAssets
 			else
 			{
 				Cursor.lockState = CursorLockMode.Confined;
+				LookInput(new Vector2(0, 0));
+			}
+
+			if (!GameManager.isGameActive)
+			{
 				LookInput(new Vector2(0, 0));
 			}
 		}

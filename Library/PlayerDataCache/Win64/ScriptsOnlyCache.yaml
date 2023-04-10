@@ -1,5 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp-Editor.dll:
+    - ReadmeEditor
     Assembly-CSharp.dll:
     - BasicRigidBodyPush
     - ControllerPrototype
@@ -20,6 +22,7 @@ ScriptsOnlyBuild:
     - NetworkCharacterControllerPrototype
     - PlayerAOIPrototype
     - PlayerController
+    - Readme
     - StarterAssets.StarterAssetsInputs
     - StarterAssets.ThirdPersonController
     Cinemachine.dll:
@@ -1054,7 +1057,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: a8e6b663c230d8b59a468b676720bb78
+      Hash: ae328fe69e84dab4442c9cce50bb0e47
     assemblyName: Assembly-CSharp.dll
     namespaceName: FusionScripts
     className: NetworkSceneContext
@@ -1552,7 +1555,7 @@ ScriptsOnlyBuild:
     className: CinemachineFollowZoom
   - hash:
       serializedVersion: 2
-      Hash: 1a15bc113c0c509f8fc5a854021349fd
+      Hash: f80fb08dcaffe4cefd4d0143cfc7f96c
     assemblyName: Assembly-CSharp.dll
     namespaceName: FusionScripts
     className: NetworkGame

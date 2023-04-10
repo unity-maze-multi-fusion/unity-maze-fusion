@@ -1,9 +1,12 @@
+using System;
 using System.Collections.Generic;
 using Fusion;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace FusionScripts
 {
+
     public class NetworkGame : NetworkBehaviour
     {
         [SerializeField] GameObject wall;
@@ -11,7 +14,11 @@ namespace FusionScripts
         
         [Networked, HideInInspector, Capacity(200)]
         public NetworkDictionary<PlayerRef, NetworkPlayer> Players { get; }
-        
+
+        [Networked, HideInInspector] public NetworkString<_16> sharedKey { get; set; }
+
+        public static int keyCount;
+
         private static int numRow = 9;
         private static int numCol = 9;
         private int[,,] map = new int[numRow, numCol, 5];
@@ -19,6 +26,8 @@ namespace FusionScripts
         private float scale = 5f;
         private float yPos = -1.75f;
         private float centre = 2.5f;
+
+        public static List<NetworkObject> keys;
 
         public void Join(NetworkPlayer player)
         {
@@ -49,13 +58,15 @@ namespace FusionScripts
             if (!NetworkGame.spawnedGameObjects)
             {
                 NetworkGame.spawnedGameObjects = true;
+                keys = new List<NetworkObject>();
                 this.GenerateMaze();
+                keyCount = 0;
             }
             if (NetworkSceneContext.Instance.hostClientText != null)
             {
                 NetworkSceneContext.Instance.hostClientText.text = Runner.IsServer ? "Host" : "Client";
             }
-            Physics.IgnoreLayerCollision(7, 8, true);
+            // Physics.IgnoreLayerCollision(7, 8, true);
         }
 
         void FixedUpdate()
@@ -63,6 +74,15 @@ namespace FusionScripts
             if (NetworkSceneContext.Instance.countText != null)
             {
                 NetworkSceneContext.Instance.countText.text = $"Count: {this.Players.Count}";
+            }
+
+            if (NetworkSceneContext.Instance.keyCountText != null)
+            {
+                if (HasStateAuthority)
+                {
+                    sharedKey = "Keys\n" + (GameManager.doorCount - keys.Count);
+                }
+                NetworkSceneContext.Instance.keyCountText.text = sharedKey.ToString();
             }
         }
 
@@ -212,7 +232,8 @@ namespace FusionScripts
                     spawnPos = new Vector3(scale * r + centre, 0, scale * c + centre);
                 } while (spawnPosVal.Contains(spawnPos));
                 spawnPosVal.Add(spawnPos);
-                Runner.Spawn(this.key, spawnPos, Quaternion.Euler(-90f, 45f, 0f));
+                keyCount++;
+                keys.Add(Runner.Spawn(this.key, spawnPos, Quaternion.Euler(-90f, 45f, 0f)));
             }
         }
         static bool spawnedGameObjects = false;
